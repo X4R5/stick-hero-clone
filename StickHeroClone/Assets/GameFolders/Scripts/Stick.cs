@@ -21,11 +21,14 @@ namespace Game
             RaycastHit2D hit = Physics2D.Raycast(_rayPos.position, _rayPos.forward, _maxDistance, _layerMask);
             Debug.DrawRay(_rayPos.position, _rayPos.forward * _maxDistance, Color.red);
             
-            if(hit.collider != null){
-                Debug.Log("a");
-            }else{
-                Debug.Log("b");
+            if(!_manager._isGrowing){
+                if(hit.collider != null && hit.collider.gameObject == _manager._nextBlock){
+                    _isOk = true;
+                }else{
+                    _isOk = false;
+                }
             }
+            
         }
     }
 }
