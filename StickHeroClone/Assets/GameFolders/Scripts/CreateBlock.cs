@@ -15,7 +15,7 @@ namespace Game
         }
 
         public void Create(){
-            var newPosition = new Vector3(Random.Range(_manager._currentBlock.transform.position.x + _minX, _manager._currentBlock.transform.position.x + _maxX), -3.77f, 0);
+            var newPosition = new Vector3(Random.Range(_manager.CurrentBlock.transform.position.x + _minX, _manager.CurrentBlock.transform.position.x + _maxX), -3.77f, 0);
             var newBlock = Instantiate(_blockPrefab, newPosition, Quaternion.identity);
             _manager._nextBlock = newBlock;
         }
